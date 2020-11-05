@@ -48,6 +48,9 @@ const Search = () => {
 
     // it solves the problem but we also got delay for our first default search
     // se don't want that, so to avoid this for firs serach we will putt check above
+
+    // as we are using results.length property also in function so we need to pass that too
+    // otherwise we got warning
   }, [term, results.length]);
   const searchResults = results.map((result) => {
     return (
