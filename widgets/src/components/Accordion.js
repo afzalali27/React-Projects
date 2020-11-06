@@ -36,6 +36,7 @@ const Accordion = (props) => {
       className="ui styled accordion container"
       style={{ marginTop: "10px" }}
     >
+      <h1 className="ui header">Accordion List expandable</h1>
       {itemsList}
     </div>
   );
