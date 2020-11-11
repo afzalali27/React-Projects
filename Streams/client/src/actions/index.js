@@ -47,8 +47,12 @@ export const editStream = (id, updatedValues) => {
   // return thunk function
   return async (dispatch) => {
     // put for updating
-    const res = await streams.put(`/streams${id}`, updatedValues);
+    // using patch it will only chnage required data, not other attr like user id
+    const res = await streams.patch(`/streams${id}`, updatedValues);
     dispatch({ type: "EDIT_STREAM", payload: res.data });
+
+    // also after removing error you can navigate back to
+    // history.push("/");
   };
 };
 
