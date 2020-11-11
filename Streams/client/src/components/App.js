@@ -6,10 +6,14 @@ import StreamDelete from "./streams/StreamDelete";
 import StreamShow from "./streams/StreamShow";
 import StreamList from "./streams/StreamList";
 import Header from "./Header";
+import history from "../history";
 const App = () => {
   return (
     <div className="ui container" style={{ marginTop: "10px" }}>
-      <BrowserRouter>
+      {/* now router will use our history object instead of its own
+      but it will give warning , so to remove that warning we will use ROuter instead of 
+      browser router */}
+      <BrowserRouter history={history}>
         <Header></Header>
         <div>
           <Route path="/" exact component={StreamList}></Route>

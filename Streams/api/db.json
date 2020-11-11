@@ -9,6 +9,24 @@
       "description": "i am testing streams and they are good",
       "title": "Other stream",
       "id": 2
+    },
+    {
+      "title": "Stream with id",
+      "description": "Hi i am adding this stream with id",
+      "userId": "102063480839129340903",
+      "id": 3
+    },
+    {
+      "title": "Unexpected behaviour",
+      "description": "Didn't Expect that at least from you",
+      "userId": "102063480839129340903",
+      "id": 4
+    },
+    {
+      "title": "programatic navigation",
+      "description": "YOu should not see this on form page!!!",
+      "userId": "102063480839129340903",
+      "id": 5
     }
   ]
 }

@@ -1,5 +1,5 @@
 import streams from "../apis/streams";
-
+import history from "../history";
 export const signIn = (userId) => {
   return {
     type: "SIGN_IN",
@@ -14,11 +14,16 @@ export const signOut = () => {
 };
 
 export const createStream = (formValues) => {
-  return async (dispatch) => {
-    const res = await streams.post("/streams", formValues);
+  return async (dispatch, getState) => {
+    const { userId } = getState().auth;
+
+    const res = await streams.post("/streams", { ...formValues, userId }); // also pass the id for user who created stream
     // dispatching action of create stream type with new data that is responsed back from server
 
     dispatch({ type: "CREATE_STREAM", payload: res.data });
+    // after creating stream user should be redirect to stream list page
+    // uncomment the below line to use navigation when you have resolved history file error
+    // history.push();
   };
 };
 
