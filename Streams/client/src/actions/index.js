@@ -23,7 +23,7 @@ export const createStream = (formValues) => {
     dispatch({ type: "CREATE_STREAM", payload: res.data });
     // after creating stream user should be redirect to stream list page
     // uncomment the below line to use navigation when you have resolved history file error
-    // history.push();
+     history.push("/");
   };
 };
 
@@ -52,7 +52,7 @@ export const editStream = (id, updatedValues) => {
     dispatch({ type: "EDIT_STREAM", payload: res.data });
 
     // also after removing error you can navigate back to
-    // history.push("/");
+     history.push("/");
   };
 };
 

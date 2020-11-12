@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { Router, Route } from "react-router-dom";
 import StreamCreate from "./streams/StreamCreate";
 import StreamEdit from "./streams/StreamEdit";
 import StreamDelete from "./streams/StreamDelete";
@@ -13,7 +13,7 @@ const App = () => {
       {/* now router will use our history object instead of its own
       but it will give warning , so to remove that warning we will use ROuter instead of 
       browser router */}
-      <BrowserRouter history={history}>
+      <Router history={history}>
         <Header></Header>
         <div>
           <Route path="/" exact component={StreamList}></Route>
@@ -27,7 +27,7 @@ const App = () => {
           ></Route>
           <Route path="/streams/show" exact component={StreamShow}></Route>
         </div>
-      </BrowserRouter>
+      </Router>
     </div>
   );
 };
